@@ -17,9 +17,9 @@ def main(argv):
     """
     inputfile = ''
     try:
-        opts, _ = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+        opts, _ = getopt.getopt(argv,"hi:", ["ifile=")
     except getopt.GetoptError:
-        print("test.py -i <inputfile> -o <outputfile>")
+        print("test.py -i <inputfile>")
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':

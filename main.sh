@@ -20,7 +20,7 @@ python3 encryption.py
 
 # Move to STS
 
-python3 move_data.py cipher.txt
+# python3 move_data.py -i cipher.txt
 
 
 
