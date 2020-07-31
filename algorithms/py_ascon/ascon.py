@@ -5,7 +5,7 @@ Implementation of Ascon v1.2, an authenticated cipher and hash function
 http://ascon.iaik.tugraz.at/
 """
 
-debug = True
+debug = False
 debugpermutation = False
 
 # === Ascon AEAD encryption and decryption ===

@@ -1,2 +1,4 @@
 # Ignore created temporary data
 *.txt
+*.png
+*.gz

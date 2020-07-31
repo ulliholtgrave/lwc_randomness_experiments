@@ -14,6 +14,7 @@ int crypto_aead_encrypt(unsigned char* c, unsigned long long* clen,
                         const unsigned char* ad, unsigned long long adlen,
                         const unsigned char* nsec, const unsigned char* npub,
                         const unsigned char* k) {
+
   const u64 K0 = U64BIG(*(u64*)k);
   const u64 K1 = U64BIG(*(u64*)(k + 8));
   const u64 N0 = U64BIG(*(u64*)npub);

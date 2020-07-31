@@ -8,19 +8,19 @@ echo "Starting plaintext Generation"
 
 
 # TODO Loop for larger number of sequences
-python3 data_generation.py -m random -t plaintext -b 128
+python3 data_generation.py -m real-world -t plaintext -b 10000000
 
 
 echo "Starting key Generation"
-python3 data_generation.py -m low-density -t key -b 16
+python3 data_generation.py -m random -t key -b 16
 
 # Encryption
 
-python3 encryption.py
+#python3 encryption.py
 
 # Move to STS
 
-# python3 move_data.py -i cipher.txt
+#python3 move_data.py -i cipher.txt
 
 
 

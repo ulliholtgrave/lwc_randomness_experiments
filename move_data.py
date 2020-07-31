@@ -17,7 +17,7 @@ def main(argv):
     """
     inputfile = ''
     try:
-        opts, _ = getopt.getopt(argv,"hi:", ["ifile=")
+        opts, _ = getopt.getopt(argv, "hi:", ["ifile="])
     except getopt.GetoptError:
         print("test.py -i <inputfile>")
         sys.exit(2)
@@ -40,7 +40,7 @@ def move_data(ifile):
     """
     dirname = os.path.dirname(__file__)
     file = os.path.join(dirname, ifile)
-    destination = os.path.join(dirname, 'sts-2.1.2/sts-2.1.2/data/temp_data.txt')
+    destination = os.path.join(dirname, 'sts-2.1.2/data/temp_data.txt')
     shutil.move(file, destination)
     print("Test file moved to Statistical Test Suite")
 
