@@ -8,6 +8,7 @@ import sys
 import getopt
 from datetime import datetime
 
+
 def main(argv):
     """
     Function that includes all data generation steps
@@ -67,7 +68,6 @@ def main(argv):
     else:
         print("No existing mode is given. Please fix and re-run the script")
         sys.exit(2)
-    #TODO Avalanche
 
 
 def save_state(mode, data_type, bytelen, seed):
@@ -79,9 +79,11 @@ def save_state(mode, data_type, bytelen, seed):
     """
     log = open("logs/history.txt", "a")
     log_entry = str(datetime.today()) + " - Mode: " + mode + " - DataType: " \
-    + data_type + " - Sequence-Length" + str(bytelen) + " - Seed used: " + str(seed) + "\n"
+        + data_type + " - Sequence-Length" + \
+        str(bytelen) + " - Seed used: " + str(seed) + "\n"
     log.write(log_entry)
     print("Seed Saved")
+
 
 def generate_random_sequence(data, data_type, bytelen):
     """
@@ -93,7 +95,8 @@ def generate_random_sequence(data, data_type, bytelen):
         file = open("key.txt", "wb")
     elif data_type == "plaintext":
         file = open("plaintext.txt", "wb")
-    file.write(data.to_bytes(bytelen, sys.byteorder)) # ENDIANESS
+    file.write(data.to_bytes(bytelen, sys.byteorder))  # ENDIANESS
+
 
 def generate_biased_sequence(bytelen, data_type, lowdensity):
     """
@@ -114,9 +117,10 @@ def generate_biased_sequence(bytelen, data_type, lowdensity):
     else:
         data = 127
         file.write(data.to_bytes(1, sys.byteorder))
-        for x in range(0, bytelen-1):
+        for _ in range(0, bytelen-1):
             data = 255
             file.write(data.to_bytes(1, sys.byteorder))
+
 
 def generate_real_plaintext(bytelen):
     """
@@ -126,12 +130,11 @@ def generate_real_plaintext(bytelen):
         bytelen (Integer): Defines the required length of bytes of the data.
     """
     try:
-        for quarter in range(0, 10):
+        for _ in range(0, 10):
             in_file = open("crackstation.txt", "rb")
-            offset = random.randrange(100000000)
+            offset = random.randrange(1000000000)
             in_file.seek(offset)
             data = in_file.read(int(bytelen / 10))
-        
             out_file = open("plaintext.txt", "wb")
             out_file.write(data)
     except OSError:
