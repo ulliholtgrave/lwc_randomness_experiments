@@ -138,12 +138,29 @@ def encrypt(key, nonce, associated_data, plaintext, variant, padding):
 
 
 def save_cipher(data, algorithm):
+    """
+    Saves the to the corresponding file.
+    BE AWARE that this call APPENDS the cipher to the file.
+
+    Args:
+        data (String): The ciphertext.
+        algorithm (String): Name of the examined algorithm.
+    """
     file = open("ciphertexts/cipher-" + algorithm +
                 ".txt", "a", encoding='utf-8')
     file.write(data)
 
 
 def generate_nonce(length=8):
+    """
+    Generate the bit representation to a random integer. 
+
+    Args:
+        length (int, optional): Desired number of bits. Defaults to 8.
+
+    Returns:
+        [String]: Binary representation as a String.
+    """
     return ''.join([str(random.randint(0, 9)) for i in range(length)])
 
 

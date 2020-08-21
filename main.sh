@@ -101,7 +101,7 @@ python3 encryption.py True
 
 
 
-# Move to STS
+# Move Cipher to STS
 
 #python3 move_data.py -i cipher.txt
 
