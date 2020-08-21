@@ -108,6 +108,15 @@ def main(argv):
 
 def encrypt(key, nonce, associated_data, plaintext, variant, padding):
     """
+    Args:
+        key (Byte): 8 Byte key.
+        nonce (Byte): 8 Byte nonce.
+        associated_data (Byte): Either 128 Bit Integer or empty.
+        plaintext (Byte): Plaintext in Byte.
+        variant (String): Path to shared Object.
+        padding (Integer): Length of the tag.
+    Returns:
+        [Bytes]: The encrypted bytes object.
     * The CAESAR encrypt interface
     * @param c A pointer to buffer for CT
     * @param clen Ciphertext length in Bytes
